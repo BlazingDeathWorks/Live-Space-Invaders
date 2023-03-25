@@ -1,31 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public HealthBar HPBar;
-
     [SerializeField] [Range(0, 10)] private int maxHealth;
-    [SerializeField] private int health;
+    private int health;
+
+    public Slider slider;
+    public Image fill;
 
     private void Awake()
     {
         health = maxHealth;
-        HPBar.SetMaxHealth(maxHealth);
+        SetMaxHealth(maxHealth);
     }
 
     private void CheckHealth()
     {
-        HPBar.SetHealth(health);
+        SetHealth(health);
 
         if (health <= 1)
         {
-            HPBar.fill.color = Color.red;
-        }
-        else
-        {
-            HPBar.fill.color = Color.green;
+            fill.color = Color.red;
         }
 
         if (health <= 0)
@@ -40,5 +38,16 @@ public class PlayerHealth : MonoBehaviour
     {
         health--;
         CheckHealth();
+    }
+
+    public void SetMaxHealth(int health)
+    {
+        slider.maxValue = health;
+        slider.value = health;
+    }
+
+    public void SetHealth(int health)
+    {
+        slider.value = health;
     }
 }
