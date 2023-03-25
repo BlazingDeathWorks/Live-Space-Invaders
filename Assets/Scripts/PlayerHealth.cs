@@ -8,18 +8,19 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] [Range(0, 10)] private int maxHealth;
     private int health;
 
-    public Slider slider;
-    public Image fill;
+    [SerializeField] private Slider slider;
+    [SerializeField] private Image fill;
 
     private void Awake()
     {
         health = maxHealth;
-        SetMaxHealth(maxHealth);
+        slider.maxValue = health;
+        slider.value = health;
     }
 
     private void CheckHealth()
     {
-        SetHealth(health);
+        UpdateHealth();
 
         if (health <= 1)
         {
@@ -34,20 +35,14 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    private void UpdateHealth()
+    {
+        slider.value = health;
+    }
+
     public void ReduceHealth()
     {
         health--;
         CheckHealth();
-    }
-
-    public void SetMaxHealth(int health)
-    {
-        slider.maxValue = health;
-        slider.value = health;
-    }
-
-    public void SetHealth(int health)
-    {
-        slider.value = health;
     }
 }
