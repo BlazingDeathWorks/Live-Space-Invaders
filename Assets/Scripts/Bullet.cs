@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    void Update()
-    {
-        transform.Translate(0, 5 * Time.deltaTime, 0);
+    [SerializeField] private float speed = 5;
+    [SerializeField] private float lifetime = 3;
 
-        Destroy(gameObject, 3f);
+    private void Update()
+    {
+        transform.Translate(transform.up * speed * Time.deltaTime, Space.World);
+
+        Destroy(gameObject, lifetime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
