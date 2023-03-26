@@ -166,11 +166,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cf3ecbd170a94f45b657429f8a1f29d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTime: 5
-  minTime: 2
-  speed: 0.004
+  path: {fileID: 0}
   bulletPrefab: {fileID: 583534744669332914, guid: b869be885067cbd43ac1a72c206d408d, type: 3}
-  path: {fileID: 11400000, guid: 2ff70dd58e6162a46a7144bb6b635e6d, type: 2}
+  minTime: 2
+  maxTime: 5
+  speed: 0.004
 --- !u!58 &-8593043153743363022
 CircleCollider2D:
   m_ObjectHideFlags: 0

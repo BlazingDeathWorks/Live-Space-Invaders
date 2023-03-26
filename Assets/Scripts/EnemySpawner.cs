@@ -4,29 +4,56 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public float spawnRate;
-    float lastSpawned;
+    [SerializeField] private EnemyScript enemyPrefab;
+    [SerializeField] private PathData[] paths;
+    private PathData currentWavePath;
 
-    public int enemiesPerWave;
-    public int enemiesSpawned;
+    [SerializeField] private float waveSpawnRate = 6;
+    private float lastWaveSpawned;
 
-    Vector2 spawnPos;
-    public GameObject EnemyPrefab;
+    [SerializeField] private float spawnRate;
+    private float lastEnemySpawned;
+
+    [SerializeField] private int enemiesPerWave;
+    private int enemiesSpawned;
 
     private void Awake()
     {
-        //can be changed
-        spawnPos = transform.position;
+        lastWaveSpawned = waveSpawnRate;
     }
 
     void Update()
     {
-        lastSpawned += Time.deltaTime;
-        if (lastSpawned > spawnRate/60 && enemiesSpawned < enemiesPerWave)
+        if (paths.Length <= 0) return;
+
+        lastWaveSpawned += Time.deltaTime;
+        lastEnemySpawned += Time.deltaTime;
+
+        //If time for the next wave or the current wave is still in progress
+        if (lastWaveSpawned >= waveSpawnRate || enemiesSpawned > 0)
         {
-            enemiesSpawned++;
-            Instantiate(EnemyPrefab, spawnPos, Quaternion.identity);
-            lastSpawned = 0;
+            //If new wave is starting
+            if (enemiesSpawned <= 0)
+            {
+                currentWavePath = paths[Random.Range(0, paths.Length)];
+            }
+
+            //If the wave has ended
+            if (enemiesSpawned >= enemiesPerWave)
+            {
+                enemiesSpawned = 0;
+                lastWaveSpawned -= waveSpawnRate;
+                return;
+            }
+
+            //If time to spawn the next enemy in the wave
+            if (lastEnemySpawned >= spawnRate)
+            {
+                enemiesSpawned++;
+                EnemyScript enemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+                enemy.path = currentWavePath;
+                lastEnemySpawned = 0;
+            }
         }
     }
 }
