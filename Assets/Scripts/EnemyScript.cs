@@ -24,14 +24,27 @@ public class EnemyScript : MonoBehaviour
     {
         if (path == null) return;
 
+        if (pos >= path.position.Length)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         transform.position = Vector2.MoveTowards(getPlayerVec2(), path.position[pos], speed);
         if (Vector3.Distance(transform.position, path.position[pos]) < 0.2)
             pos++;
-        pos = Mathf.Clamp(pos, 0, path.position.Length-1);
 
         timeSpent += Time.deltaTime;
         if (timeSpent >= timeToSpend)
             Shoot();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.GetComponent<PlayerHealth>().ReduceHealth();
+        }
     }
 
     Vector2 getPlayerVec2()

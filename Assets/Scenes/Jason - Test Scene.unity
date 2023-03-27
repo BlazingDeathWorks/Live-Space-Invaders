@@ -327,12 +327,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3467689653661417350, guid: 8909ba9f282508244ac7c4cb35f93c43, type: 3}
       propertyPath: paths.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3467689653661417350, guid: 8909ba9f282508244ac7c4cb35f93c43, type: 3}
       propertyPath: paths.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: f3c2d4f0df3abe54b8ff68a917a47682, type: 2}
+    - target: {fileID: 3467689653661417350, guid: 8909ba9f282508244ac7c4cb35f93c43, type: 3}
+      propertyPath: paths.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: ee8c406903648d542bb7cbce5ed4c561, type: 2}
+    - target: {fileID: 3467689653661417350, guid: 8909ba9f282508244ac7c4cb35f93c43, type: 3}
+      propertyPath: paths.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: a4ad6cf9031082e4fad1b3b492e7ac9f, type: 2}
     - target: {fileID: 7649454088660320549, guid: 8909ba9f282508244ac7c4cb35f93c43, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -653,7 +661,7 @@ GameObject:
   - component: {fileID: 753542372}
   - component: {fileID: 753542371}
   - component: {fileID: 753542370}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
