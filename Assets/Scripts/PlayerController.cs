@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     private float fireTime;
 
     [SerializeField] private GameObject bullet;
+    [SerializeField] private Transform firePoint;
 
     private Rigidbody2D rb;
 
@@ -36,7 +37,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            Instantiate(bullet, transform.position, Quaternion.identity);
+            Instantiate(bullet, firePoint.position, Quaternion.identity);
         }
 
         if (Input.GetKey(KeyCode.Mouse0))
@@ -45,7 +46,7 @@ public class PlayerController : MonoBehaviour
 
             if (fireTime <= 0)
             {
-                Instantiate(bullet, transform.position, Quaternion.identity);
+                Instantiate(bullet, firePoint.position, Quaternion.identity);
                 fireTime = fireRate;
             }
         }

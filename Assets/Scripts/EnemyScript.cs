@@ -15,6 +15,8 @@ public class EnemyScript : MonoBehaviour
 
     private int pos = 0;
 
+    [SerializeField] private Transform firePoint;
+
     void Awake()
     {
         RandomizeTime();
@@ -59,7 +61,7 @@ public class EnemyScript : MonoBehaviour
 
     void Shoot()
     {
-        Instantiate(bulletPrefab, transform.position, Quaternion.Euler(new Vector3(180, 0, 0)));
+        Instantiate(bulletPrefab, firePoint.position, Quaternion.Euler(new Vector3(180, 0, 0)));
         RandomizeTime();
         timeSpent = 0f;
     }
