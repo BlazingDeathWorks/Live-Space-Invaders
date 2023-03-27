@@ -46,7 +46,7 @@ public class EnemyScript : MonoBehaviour
 
     void Shoot()
     {
-        Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y - 0.6f, transform.position.z), Quaternion.Euler(new Vector3(180, 0, 0)));
+        Instantiate(bulletPrefab, transform.position, Quaternion.Euler(new Vector3(180, 0, 0)));
         RandomizeTime();
         timeSpent = 0f;
     }

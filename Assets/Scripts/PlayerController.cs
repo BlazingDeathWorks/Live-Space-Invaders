@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            Instantiate(bullet, new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), Quaternion.identity);
+            Instantiate(bullet, transform.position, Quaternion.identity);
         }
 
         if (Input.GetKey(KeyCode.Mouse0))
@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
 
             if (fireTime <= 0)
             {
-                Instantiate(bullet, new Vector3 (transform.position.x, transform.position.y + 1f, transform.position.z), Quaternion.identity);
+                Instantiate(bullet, transform.position, Quaternion.identity);
                 fireTime = fireRate;
             }
         }

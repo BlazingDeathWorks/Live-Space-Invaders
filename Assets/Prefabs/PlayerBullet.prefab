@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 1176305108259801351}
   - component: {fileID: 4979984145938503795}
   - component: {fileID: 4966616227404989749}
-  m_Layer: 0
-  m_Name: Bullet
+  m_Layer: 3
+  m_Name: PlayerBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,7 +109,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -171,3 +171,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f68ca2dab9b6e84b896d1a22ba2f850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
+  lifetime: 3
