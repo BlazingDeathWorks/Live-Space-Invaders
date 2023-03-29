@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private EnemyScript enemyPrefab;
+    [SerializeField] private Enemy enemyPrefab;
     [SerializeField] private PathData[] paths;
     private PathData currentWavePath;
 
@@ -50,7 +50,7 @@ public class EnemySpawner : MonoBehaviour
             if (lastEnemySpawned >= spawnRate)
             {
                 enemiesSpawned++;
-                EnemyScript enemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+                Enemy enemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
                 enemy.path = currentWavePath;
                 lastEnemySpawned = 0;
             }

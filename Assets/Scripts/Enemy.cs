@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class EnemyScript : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     [HideInInspector] public PathData path;
     [SerializeField] private GameObject bulletPrefab;
@@ -32,7 +32,7 @@ public class EnemyScript : MonoBehaviour
             return;
         }
 
-        transform.position = Vector2.MoveTowards(getPlayerVec2(), path.position[pos], speed);
+        transform.position = Vector2.MoveTowards(transform.position, path.position[pos], speed);
         if (Vector3.Distance(transform.position, path.position[pos]) < 0.2)
             pos++;
 
@@ -46,12 +46,8 @@ public class EnemyScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             collision.GetComponent<PlayerHealth>().ReduceHealth();
+            Destroy(gameObject);
         }
-    }
-
-    Vector2 getPlayerVec2()
-    {
-        return new Vector2(transform.position.x, transform.position.y);
     }
 
     void RandomizeTime()

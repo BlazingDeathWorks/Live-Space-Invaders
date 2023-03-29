@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 3220753424132644252}
   - component: {fileID: 5899260163248886638}
   - component: {fileID: 2391416143796578097}
-  - component: {fileID: 3979673578360194746}
+  - component: {fileID: 1215295074539630654}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -66,7 +66,7 @@ Transform:
   m_Children:
   - {fileID: 3032572640300495089}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3096037064388878713
 SpriteRenderer:
@@ -109,7 +109,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: -1355697336, guid: 5f70de9c8fb2c644e886f2a7173440db, type: 3}
   m_Color: {r: 1, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
+  gameManager: {fileID: 0}
   slider: {fileID: 0}
   fill: {fileID: 0}
 --- !u!50 &2391416143796578097
@@ -178,8 +179,8 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!60 &3979673578360194746
-PolygonCollider2D:
+--- !u!58 &1215295074539630654
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -210,19 +211,6 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0, y: 0.5773587}
-      - {x: -0.5, y: -0.28866667}
-      - {x: 0.5, y: -0.28866667}
-  m_UseDelaunayMesh: 0
+  m_Offset: {x: 0.0049459934, y: -0.0840804}
+  serializedVersion: 2
+  m_Radius: 0.578041

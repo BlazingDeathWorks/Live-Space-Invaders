@@ -7,7 +7,7 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] [Range(0, 10)] private int maxHealth;
     private int health;
-	[SerializeField] private GameOverScript GOScript;
+	[SerializeField] private GameManager gameManager;
 
     [SerializeField] private Slider slider;
     [SerializeField] private Image fill;
@@ -31,8 +31,7 @@ public class PlayerHealth : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
-            //Display Game Over Overlay
-			GOScript.GameOver();
+			gameManager.GameOver();
         }
     }
 

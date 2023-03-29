@@ -7,11 +7,14 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float speed = 5;
     [SerializeField] private float lifetime = 3;
 
+    private void Start()
+    {
+        Destroy(gameObject, lifetime);
+    }
+
     private void Update()
     {
         transform.Translate(transform.up * speed * Time.deltaTime, Space.World);
-
-        Destroy(gameObject, lifetime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -25,8 +28,9 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             Destroy(collision.gameObject);
-            //Add score
-			PlayerScore.score += 5;
+            ScoreManager.Instance.AddScore();
         }
+
+        Destroy(gameObject);
     }
 }

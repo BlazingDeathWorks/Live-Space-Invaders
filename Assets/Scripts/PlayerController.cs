@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     {
         movement = Input.GetAxisRaw("Horizontal");
 
-        Shooting();
+        Shoot();
     }
 
     void FixedUpdate()
@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector2(movement * moveSpeed, 0f);
     }
 
-    void Shooting()
+    void Shoot()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
