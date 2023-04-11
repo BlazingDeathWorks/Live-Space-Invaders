@@ -4,7 +4,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [HideInInspector] public PathData path;
-    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private Bullet bulletPrefab;
 
     [SerializeField] private float minTime = 2f;
     [SerializeField] private float maxTime = 5f;

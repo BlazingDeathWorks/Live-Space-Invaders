@@ -199,7 +199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: {fileID: 0}
-  bulletPrefab: {fileID: 583534744669332914, guid: 4703dfc40f075094492a3af90b2f8225, type: 3}
+  bulletPrefab: {fileID: 4966616227404989749, guid: 4703dfc40f075094492a3af90b2f8225, type: 3}
   minTime: 2
   maxTime: 5
   speed: 0.004

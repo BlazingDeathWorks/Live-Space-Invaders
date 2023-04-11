@@ -134,7 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   fireRate: 0.5
-  bullet: {fileID: 583534744669332914, guid: b869be885067cbd43ac1a72c206d408d, type: 3}
+  bullet: {fileID: 4966616227404989749, guid: b869be885067cbd43ac1a72c206d408d, type: 3}
   firePoint: {fileID: 3032572640300495089}
 --- !u!114 &5899260163248886638
 MonoBehaviour:
